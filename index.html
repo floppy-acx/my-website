@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Robotics Website</title>
+
+    <style>
+	.hero-img {
+    width: 200px;
+    margin: 20px auto;
+    display: block;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+	.menu-icon {
+    font-size: 26px;
+    cursor: pointer;
+    display: none;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .menu-icon {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #020617;
+        position: absolute;
+        top: 70px;
+        right: 40px;
+        border-radius: 10px;
+        padding: 15px;
+    }
+
+    .nav-links a {
+        margin: 10px 0;
+    }
+}
+
+	html {
+    scroll-behavior: smooth;
+}
+
+	.navbar {
+    position: sticky;
+    top: 0;
+    background-color: #020617;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    color: #38bdf8;
+}
+
+.nav-links a {
+    color: white;
+    margin-left: 20px;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.nav-links a:hover {
+    color: #38bdf8;
+}
+
+        body {
+            background: linear-gradient(135deg, #020617, #0f172a);
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 80px;
+        }
+
+        h1 {
+            font-size: 42px;
+        }
+
+        p {
+            font-size: 18px;
+            color: #cbd5f5;
+        }
+
+        .btn {
+            padding: 14px 28px;
+            margin: 10px;
+            font-size: 16px;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            background-color: #38bdf8;
+            color: black;
+            transition: transform 0.2s;
+        }
+
+        .btn:hover {
+            transform: scale(1.1);
+            background-color: #0ea5e9;
+        }
+
+        #message {
+            margin-top: 30px;
+            font-size: 20px;
+            color: #22d3ee;
+        }
+		.projects {
+    margin-top: 60px;
+}
+
+.projects h2 {
+    margin-bottom: 20px;
+}
+
+.card {
+    background-color: #020617;
+    border-radius: 15px;
+    padding: 20px;
+    margin: 15px auto;
+    width: 300px;
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.2);
+}
+.card {
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 30px rgba(56, 189, 248, 0.5);
+}
+
+h1 {
+    animation: fadeIn 2s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+    </style>
+</head>
+
+<body>
+
+  <div class="menu-icon" onclick="toggleMenu()">☰</div>
+
+<div class="nav-links" id="navLinks">
+    <a href="#home">Home</a>
+    <a href="#projects">Projects</a>
+    <a href="#about">About</a>
+</div>
+
+
+</div>
+<h1 id="home">🤖 Eddie's Robotics Zone</h1>
+<img src="images/roo.png" class="hero-img">
+
+
+<p>⚙️ Coding • 🔧 Building • 🚀 Innovating</p>
+
+    <p>Building the future, one robot at a time</p>
+
+    <button class="btn" onclick="sayHello()">Say Hello</button>
+    <button class="btn" onclick="showGoal()">My Goal</button>
+    <button class="btn" onclick="robotFact()">Robot Fact</button>
+
+    <div id="message"></div>
+	<div class="projects" id="projects">
+
+    <h2>🛠️ My Robot Projects</h2>
+
+    <div class="card">🤖 Line Following Robot</div>
+<div class="card">🚗 Obstacle Avoiding Robot</div>
+<div class="card">🦾 Robotic Arm</div>
+
+	
+	<div id="about" style="margin-top: 80px;">
+    <h2>👋 About Me</h2>
+    <p>JOURNEY TO CAREER.</p>
+
+</div>
+
+
+    <script>
+        function sayHello() {
+            document.getElementById("message").innerText =
+                "Hello! Welcome to Eddie's robotics website 🚀";
+        }
+
+        function showGoal() {
+            document.getElementById("message").innerText =
+                "My goal is to become a great robotics engineer 🤖";
+        }
+
+        function robotFact() {
+            document.getElementById("message").innerText =
+                "The RO1 robotic arm from Standard Bots costs $37,000, about half the price of comparable systems from ABB or Universal Robots!";
+        }
+	
+    function toggleMenu() {
+        let nav = document.getElementById("navLinks");
+
+        if (nav.style.display === "flex") {
+            nav.style.display = "none";
+        } else {
+            nav.style.display = "flex";
+        }
+    }
+</script>
+
+
+</body>
+</html>
